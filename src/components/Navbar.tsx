@@ -86,26 +86,17 @@ const mainMenu: MenuItem[] = [
 
 export default function Navbar() {
     return (
-        <header className="sticky top-0 z-40 border-b border-white/10 bg-[#0b1412]/80 backdrop-blur-md">
-            <div className="container mx-auto flex h-20 max-w-6xl items-center justify-between px-4 lg:px-6">
+        <header className="absolute w-full top-0 z-40 border-b border-white/10 bg-transparent backdrop-blur-md">
+            <div className="container mx-auto flex h-22 max-w-7xl items-center justify-between px-4 lg:px-6">
                 {/* Logo */}
                 <Link href="/" className="flex items-center gap-3">
-                    {/* Replace src with your local logo/icon */}
-                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#e5e6e7]">
-                        <Image
-                            src="/logo-mark-graf-bernstorff.svg"
-                            alt="Graf Bernstorff Consulting"
-                            width={24}
-                            height={24}
-                            className="h-6 w-6"
-                        />
-                    </div>
-                    <span className="hidden flex-col leading-tight text-sm font-medium tracking-tight text-slate-50 sm:flex">
-                        <span className="text-base font-semibold uppercase tracking-[0.18em]">
-                            Graf Bernstorff
-                        </span>
-                        <span className="text-xs text-slate-300">Real Estate &amp; Investment Consulting</span>
-                    </span>
+                    <Image
+                        src="/logo.svg"
+                        alt="Graf Bernstorff Consulting"
+                        width={100}
+                        height={100}
+                        className="h-38 w-38"
+                    />
                 </Link>
 
                 {/* Desktop navigation */}
@@ -114,23 +105,23 @@ export default function Navbar() {
                         <NavigationMenuList className="gap-2">
                             {mainMenu.map((item) =>
                                 item.items ? (
-                                    <NavigationMenuItem key={item.title}>
-                                        <NavigationMenuTrigger className="bg-transparent text-sm font-medium text-slate-100 hover:bg-white/5">
+                                    <NavigationMenuItem key={item.title} className="">
+                                        <NavigationMenuTrigger className="bg-transparent text-sm font-medium text-slate-100 ">
                                             {item.title}
                                         </NavigationMenuTrigger>
-                                        <NavigationMenuContent className="mt-2 rounded-xl border border-slate-100/10 bg-[#0f1816] p-2 shadow-xl">
-                                            <div className="grid w-[360px] gap-1 p-1">
+                                        <NavigationMenuContent className="  p-2 ">
+                                            <div className="grid w-[360px] gap-1 p-1 ">
                                                 {item.items.map((sub) => (
-                                                    <NavigationMenuLink asChild key={sub.title}>
+                                                    <NavigationMenuLink asChild key={sub.title} className="">
                                                         <Link
                                                             href={sub.url}
-                                                            className="flex flex-col rounded-lg p-3 text-left transition hover:bg-white/5"
+                                                            className="flex flex-col rounded-lg p-3 text-left  transition "
                                                         >
-                                                            <span className="text-sm font-semibold text-slate-50">
+                                                            <span className="text-sm font-semibold text-black">
                                                                 {sub.title}
                                                             </span>
                                                             {sub.description && (
-                                                                <span className="mt-1 text-xs text-slate-300">
+                                                                <span className="mt-1 text-xs text-slate-800">
                                                                     {sub.description}
                                                                 </span>
                                                             )}
@@ -145,7 +136,7 @@ export default function Navbar() {
                                         <NavigationMenuLink asChild>
                                             <Link
                                                 href={item.url}
-                                                className="text-sm font-medium text-slate-100 transition hover:text-[#d7f2e3]"
+                                                className="text-sm font-medium block mx-2 text-slate-100 transition"
                                             >
                                                 {item.title}
                                             </Link>
@@ -159,7 +150,7 @@ export default function Navbar() {
                     {/* Main CTA */}
                     <Button
                         asChild
-                        className="rounded-full bg-[#3d6252] px-5 text-sm font-semibold tracking-tight text-white shadow-sm hover:bg-[#314e42]"
+                        className=" bg-[#265440] px-5 text-sm font-semibold tracking-tight text-white shadow-sm hover:bg-[#314e42]"
                     >
                         <Link href="/kontakt#beratung">
                             Jetzt Beratung anfragen
@@ -172,7 +163,7 @@ export default function Navbar() {
                     <Button
                         asChild
                         size="sm"
-                        className="rounded-full bg-[#3d6252] px-4 text-xs font-semibold tracking-tight text-white hover:bg-[#314e42]"
+                        className="rounded-full bg-[#3d6252] px-4 text-xs font-semibold tracking-tight text-white hovers:bg-[#314e42]"
                     >
                         <Link href="/kontakt#beratung">Beratung</Link>
                     </Button>
@@ -187,24 +178,22 @@ export default function Navbar() {
                                 <Menu className="h-4 w-4" />
                             </Button>
                         </SheetTrigger>
-                        <SheetContent side="right" className="w-[80vw] max-w-sm bg-[#0f1816] text-slate-50">
+                        <SheetContent side="right" className="w-[80vw] max-w-sm bg-[#174a34] text-slate-50">
                             <SheetHeader className="border-b border-white/5 pb-3">
                                 <SheetTitle className="flex items-center gap-3">
-                                    <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[#e5e6e7]">
+                                    <Link href="/" className="flex items-center gap-3">
                                         <Image
-                                            src="/logo-mark-graf-bernstorff.svg"
+                                            src="/logo.svg"
                                             alt="Graf Bernstorff Consulting"
-                                            width={22}
-                                            height={22}
+                                            width={100}
+                                            height={100}
+                                            className="h-20 w-38"
                                         />
-                                    </div>
-                                    <span className="text-sm font-semibold uppercase tracking-[0.14em]">
-                                        Graf Bernstorff
-                                    </span>
+                                    </Link>
                                 </SheetTitle>
                             </SheetHeader>
 
-                            <div className="mt-4 flex flex-col gap-6">
+                            <div className="mt-4 flex flex-col gap-6 p-5">
                                 <Accordion type="single" collapsible className="flex flex-col gap-2">
                                     {mainMenu.map((item) =>
                                         item.items ? (
@@ -227,7 +216,7 @@ export default function Navbar() {
                                         ) : (
                                             <button
                                                 key={item.title}
-                                                className="text-left text-sm font-medium text-slate-100"
+                                                className="text-left text-sm font-medium py-3 block text-slate-100"
                                             >
                                                 <Link href={item.url}>{item.title}</Link>
                                             </button>
@@ -237,7 +226,7 @@ export default function Navbar() {
 
                                 <Button
                                     asChild
-                                    className="w-full rounded-full bg-[#3d6252] text-sm font-semibold text-white hover:bg-[#314e42]"
+                                    className="w-full bg-[#3d6252] text-sm font-semibold text-white hovers:bg-[#314e42]"
                                 >
                                     <Link href="/kontakt#beratung">Jetzt Beratung anfragen</Link>
                                 </Button>
