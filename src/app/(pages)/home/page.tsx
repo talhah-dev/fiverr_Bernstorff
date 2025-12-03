@@ -1,7 +1,8 @@
+"use client"
 import Wrapper from '@/app/Wrapper'
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, ShieldCheck, LineChart, HelpCircle, Contact, MapPin } from "lucide-react";
+import { ArrowRight, ShieldCheck, LineChart, HelpCircle, Contact, MapPin, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Euro, TrendingUp } from "lucide-react";
 import { Compass, FileSignature, Handshake } from "lucide-react";
@@ -12,9 +13,14 @@ import { Clock, Newspaper } from "lucide-react";
 import Testimonials from '@/components/Testimonials';
 import Faqs from '@/components/Faqs';
 
+import { useState } from "react";
+import { Play, X } from "lucide-react";
+
 
 
 export default function HomePage() {
+    const [isPlaying, setIsPlaying] = useState(false);
+
     return (
         <Wrapper>
 
@@ -1003,6 +1009,87 @@ export default function HomePage() {
                     </div>
                 </div>
             </section>
+
+
+
+
+            <section className="pt-12 md:pt-24 bg-white">
+                <div className="mx-auto flex max-w-7xl flex-col gap-6 px-6 md:gap-10">
+                    {/* Top: Badge + Heading + Text */}
+                    <div className="space-y-3 max-w-2xl">
+                        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#3d6252]">
+                            Kurz erklärt
+                        </p>
+                        <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-slate-900">
+                            In wenigen Minuten: Unser Ansatz für Immobilie &amp; Photovoltaik
+                        </h2>
+                        <p className="text-sm md:text-base text-slate-600">
+                            Wie kombinieren wir Kapitalanlage-Immobilien mit modernen
+                            Photovoltaik-Konzepten? Im Video erhalten Sie einen kompakten
+                            Überblick, wie wir Rendite, Steuern und Risiko zusammendenken.
+                        </p>
+                    </div>
+
+                    {/* Bottom: Video Player with Cover */}
+                    <div className="relative w-full overflow-hidden rounded-3xl">
+                        <div className="aspect-video relative bg-black">
+                            {/* Cover state */}
+                            {!isPlaying && (
+                                <>
+                                    <Image
+                                        className="object-cover"
+                                        src="/cover.jpg"
+                                        alt="Unternehmer im Gespräch über Investments"
+                                        fill
+                                        sizes="(min-width: 1024px) 900px, 100vw"
+                                        loading="lazy"
+                                    />
+
+                                    {/* Dark overlay */}
+                                    <div className="absolute inset-0 bg-black/30" />
+
+                                    {/* Play button */}
+                                    <button
+                                        type="button"
+                                        onClick={() => setIsPlaying(true)}
+                                        className="absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 items-center gap-3 rounded-full bg-white/95 px-6 py-3 text-sm font-semibold text-slate-900 shadow-lg transition hover:bg-white"
+                                    >
+                                        <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#3d6252] text-white">
+                                            <Play className="h-4 w-4" />
+                                        </span>
+                                        <span>Video abspielen</span>
+                                    </button>
+                                </>
+                            )}
+
+                            {/* Playing state */}
+                            {isPlaying && (
+                                <>
+                                    {/* Close / stop button */}
+                                    <button
+                                        type="button"
+                                        onClick={() => setIsPlaying(false)}
+                                        className="absolute right-3 top-3 z-20 inline-flex items-center gap-1 rounded-full bg-black/60 px-3 py-1 text-xs font-medium text-white backdrop-blur-sm hover:bg-black/80"
+                                    >
+                                        <X className="h-3 w-3" />
+                                        <span>Video schließen</span>
+                                    </button>
+
+                                    <iframe
+                                        className="h-full w-full"
+                                        src="https://gumlet.tv/watch/692d810e64ac9690e75f32e2/?autoplay=1"
+                                        title="Graf Bernstorff – Video"
+                                        allow="autoplay; encrypted-media; picture-in-picture"
+                                        allowFullScreen
+                                    />
+                                </>
+                            )}
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
 
             <Testimonials />
             <Faqs />
