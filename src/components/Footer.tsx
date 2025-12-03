@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import Link from "next/link";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -9,12 +8,12 @@ import { Linkedin, Mail } from "lucide-react";
 
 const navigation = [
     { title: "Startseite", href: "/" },
-    { title: "Warum investieren?", href: "/warum-investieren" },
-    { title: "Leistungen", href: "/leistungen" },
-    { title: "Photovoltaik", href: "/photovoltaik" },
-    { title: "Über uns", href: "/ueber-uns" },
+    { title: "Warum investieren?", href: "/waruminvestieren" },
+    { title: "Leistungen", href: "/services" },
+    { title: "Photovoltaik", href: "/photovoltaic-investments" },
+    { title: "Über uns", href: "/about" },
     { title: "Blog", href: "/blog" },
-    { title: "Kontakt", href: "/kontakt" },
+    { title: "Kontakt", href: "/contact" },
 ];
 
 const advantages = [
@@ -27,8 +26,6 @@ const advantages = [
 const legal = [
     { title: "Impressum", href: "/impressum" },
     { title: "Datenschutz", href: "/datenschutz" },
-    { title: "AGB", href: "/agb" },
-    { title: "Cookie-Einstellungen", href: "/cookies" },
 ];
 
 export default function Footer() {

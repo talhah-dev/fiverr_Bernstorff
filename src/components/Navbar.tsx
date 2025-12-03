@@ -36,53 +36,52 @@ interface MenuItem {
 }
 
 const mainMenu: MenuItem[] = [
-    { title: "Startseite", url: "/" },
+    { title: "Startseite", url: "/home" },
+
     {
         title: "Warum investieren",
-        url: "/warum-investieren",
+        url: "/waruminvestieren",
         items: [
             {
                 title: "Kapitalanlage Immobilien",
-                url: "/kapitalanlage-immobilien",
+                url: "/waruminvestieren",
                 description: "Stabile Sachwerte, planbare Einnahmen, steuerliche Vorteile.",
             },
             {
                 title: "Photovoltaik",
-                url: "/photovoltaik",
+                url: "/photovoltaic-investments",
                 description: "Profitieren Sie vom Energiewandel und staatlichen Rahmenbedingungen.",
             },
             {
                 title: "Vergleich: Nicht investieren vs. investieren",
-                url: "/warum-investieren#vergleich",
+                url: "/waruminvestieren#Zahlen&Entwicklungen",
                 description: "Wie sich Vermögen mit und ohne Investment entwickelt.",
             },
         ],
     },
+
     {
         title: "Leistungen",
-        url: "/leistungen",
+        url: "/services",
         items: [
             {
                 title: "Persönliche Investment-Strategie",
-                url: "/leistungen#strategie",
+                url: "/services#strategie",
                 description: "Maßgeschneiderte Konzepte für Unternehmer & Führungskräfte.",
             },
             {
                 title: "Begleitung von A–Z",
-                url: "/leistungen#prozess",
+                url: "/services#prozess",
                 description: "Von Analyse über Objektwahl bis Finanzierung & Abschluss.",
-            },
-            {
-                title: "Mallorca Option",
-                url: "/mallorca-option",
-                description: "Exklusive Immobilien- und Lifestyle-Konzepte für VIP-Kunden.",
-            },
+            }
         ],
     },
-    { title: "Über uns", url: "/ueber-uns" },
+
+    { title: "Über uns", url: "/about" },
     { title: "Blog", url: "/blog" },
-    { title: "Kontakt", url: "/kontakt" },
+    { title: "Kontakt", url: "/contact" },
 ];
+
 
 export default function Navbar() {
     return (
@@ -136,7 +135,7 @@ export default function Navbar() {
                                         <NavigationMenuLink asChild>
                                             <Link
                                                 href={item.url}
-                                                className="text-sm font-medium block mx-2 text-slate-100 transition"
+                                                className="text-sm font-medium block mx-2 hover:text-white text-slate-100 transition"
                                             >
                                                 {item.title}
                                             </Link>

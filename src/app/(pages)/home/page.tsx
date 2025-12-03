@@ -201,45 +201,110 @@ export default function HomePage() {
             </section>
 
             <section
-                className="bg-[#f3f4f5] py-16 md:pt-24"
+                className="bg-[#f3f4f5] py-16 md:py-24 overflow-x-hidden"
                 data-aos="fade-in"
                 data-aos-duration="800"
             >
-                <div
-                    className="mx-auto flex max-w-7xl flex-col gap-6 md:gap-16 px-6 text-slate-900 md:flex-row md:items-start"
-                    data-aos="fade-up"
-                    data-aos-delay="150"
-                >
+                <div className="mx-auto flex max-w-7xl flex-col gap-10 px-6 text-slate-900 md:grid md:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)] md:items-center md:gap-16">
+                    {/* Text side */}
                     <div
-                        className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500 md:pt-2"
-                        data-aos="zoom-in-up"
-                        data-aos-delay="250"
-                    >
-                        Über&nbsp;uns
-                    </div>
-
-                    <p
-                        className="text-balance text-lg leading-relaxed md:text-2xl"
+                        className="space-y-5"
                         data-aos="fade-up"
-                        data-aos-delay="300"
-                        data-aos-duration="900"
+                        data-aos-delay="120"
                     >
-                        Wir planen, strukturieren und begleiten –
-                        <span className="text-[#3d6252] font-semibold"> Sie bauen Vermögen auf.</span>
-                        Sie investieren in ausgewählte Kapitalanlage-Immobilien und Photovoltaik-Projekte,
-                        wir kümmern uns um Analyse, Konzept, Objektwahl und die Abstimmung mit
-                        Finanzierung, Steuer- und Rechtspartnern.
-                        <span>
-                            {" "}Klarheit, Zahlen, Strategie –{" "}
+                        <p
+                            className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500"
+                            data-aos="fade-up"
+                        >
+                            Über&nbsp;uns
+                        </p>
+
+                        <h1
+                            className="text-balance text-2xl font-bold leading-tight tracking-tight md:text-3xl"
+                            data-aos="fade-right"
+                        >
+                            Wir planen, strukturieren und begleiten –{" "}
+                            <span className="text-[#3d6252]">
+                                Sie bauen Vermögen auf.
+                            </span>
+                        </h1>
+
+                        <p
+                            className="text-sm leading-relaxed text-slate-700 md:text-base"
+                            data-aos="fade-up"
+                        >
+                            Sie investieren in ausgewählte Kapitalanlage-Immobilien und
+                            Photovoltaik-Projekte – wir kümmern uns um Analyse, Konzept,
+                            Objektwahl und die Abstimmung mit Finanzierung, Steuer- und
+                            Rechtspartnern. Ziel ist ein klares, nachvollziehbares
+                            Gesamtkonzept, das zu Ihrer Lebenssituation und Ihren Zielen passt.
+                        </p>
+
+                        <p
+                            className="text-sm leading-relaxed text-slate-700 md:text-base"
+                            data-aos="fade-up"
+                        >
+                            Klarheit, Zahlen, Strategie –{" "}
                             <span
-                                className="text-[#3d6252] font-semibold"
+                                className="font-semibold text-[#3d6252]"
                                 data-aos="zoom-in-up"
-                                data-aos-delay="350"
+                                data-aos-delay="380"
                             >
                                 wir gestalten, Sie profitieren.
+                            </span>{" "}
+                            An Ihrer Seite: Moritz von Graf Bernstorff mit über 28 Jahren
+                            Erfahrung in Finanzplanung, Immobilien und langfristigem
+                            Vermögensaufbau.
+                        </p>
+
+                        <div
+                            className="mt-4 flex flex-wrap gap-3 text-xs text-slate-600"
+                            data-aos="fade-up"
+                        >
+                            <span className="rounded-full bg-white px-3 py-1">
+                                28+ Jahre Erfahrung in Finanz- &amp; Immobilienstrategie
                             </span>
-                        </span>
-                    </p>
+                            <span className="rounded-full bg-white px-3 py-1">
+                                Fokus: Kapitalanlage-Immobilien &amp; Photovoltaik
+                            </span>
+                            <span className="rounded-full bg-white px-3 py-1">
+                                Persönliche 1:1-Begleitung
+                            </span>
+                        </div>
+                    </div>
+
+                    {/* Image side */}
+                    <div
+                        className="relative mx-auto h-[30rem] w-full max-w-lg md:h-96"
+                        data-aos="zoom-in-up"
+                    >
+                        <div className="absolute -inset-4 rounded-3xl bg-[#3d6252]/10 blur-2xl" />
+                        <div className="relative h-full w-full overflow-hidden rounded-3xl bg-slate-200 shadow-[0_18px_40px_rgba(15,23,42,0.3)]">
+                            <Image
+                                src="/moritz-von-graf-bernstorff.jpg"
+                                alt="Moritz von Graf Bernstorff"
+                                width={700}
+                                height={700}
+                                className="object-cover h-full"
+                                priority
+                            />
+                        </div>
+
+                        <div
+                            className="absolute -bottom-8 left-4 w-[93%] rounded-2xl bg-white px-4 py-3 text-xs text-slate-800 shadow-lg md:text-[0.7rem]"
+                            data-aos="fade-up"
+                            data-aos-delay="420"
+                        >
+                            <p className="font-semibold">
+                                Moritz von Graf Bernstorff
+                            </p>
+                            <p className="text-[0.7rem] text-slate-600">
+                                Gründer &amp; Berater · Spezialisiert auf Kapitalanlage-Immobilien,
+                                Photovoltaik &amp; strategische Vermögensplanung für
+                                Unternehmer:innen und Führungskräfte.
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </section>
 
@@ -275,7 +340,7 @@ export default function HomePage() {
                         <div
                             className="relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-6 shadow-[0_18px_40px_rgba(15,23,42,0.08)] transition-transform hover:-translate-y-1 hover:shadow-[0_22px_50px_rgba(15,23,42,0.12)]"
                             data-aos="fade-up"
-                            
+
                         >
                             <div className="mb-5 flex items-center justify-between">
                                 <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#3d6252] text-sm font-semibold text-white">
@@ -657,7 +722,7 @@ export default function HomePage() {
 
                             <div
                                 className="grid gap-4 text-[0.8rem] sm:grid-cols-2"
-                                
+
                             >
                                 <div data-aos="fade-up" className="flex items-start gap-3 rounded-2xl bg-white p-4 shadow-sm">
                                     <User className="h-5 w-5 shrink-0 text-[#3d6252]" />
@@ -689,7 +754,7 @@ export default function HomePage() {
                                 asChild
                                 className="mt-4 md:w-auto w-full bg-[#3d6252] px-6 text-sm font-semibold text-white hover:bg-[#314e42]"
                                 data-aos="fade-up"
-                                
+
                             >
                                 <Link href="/ueber-uns">Mehr über Moritz Bernstorff</Link>
                             </Button>
