@@ -28,13 +28,13 @@ export default function HomePage() {
             <section className="relative overflow-hidden pt-40 pb-16 text-slate-50 min-h-screen">
                 <div className="pointer-events-none absolute inset-0">
                     <Image
-                        src="https://images.unsplash.com/photo-1592595896551-12b371d546d5?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        src="https://images.unsplash.com/photo-1565402170291-8491f14678db?q=80&w=1117&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                         alt="Moderne Immobilie mit Photovoltaik"
                         fill
                         priority
                         className="object-cover"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-br from-black/60 to-black/40" />
+                    <div className="absolute inset-0 bg-gradient-to-br from-black/60 to-black/60" />
                 </div>
 
                 <div
@@ -61,7 +61,7 @@ export default function HomePage() {
                                 data-aos-delay="300"
                                 data-aos-duration="900"
                             >
-                                <h1 className="text-balance  text-3xl font-semibold leading-tight tracking-tight sm:text-5xl">
+                                <h1 className="text-balance  text-3xl font-bold leading-tight tracking-tight sm:text-5xl">
                                     Vermögen sichern mit Immobilien &amp; Photovoltaik.
                                     <span
                                         className="block text-[#a8e8c9]"
@@ -83,7 +83,7 @@ export default function HomePage() {
                             </div>
 
                             <div
-                                className="flex items-center md:block hidden gap-2 text-xs text-slate-200/90"
+                                className="items-center md:flex hidden gap-2 text-xs text-slate-200/90"
                                 data-aos="fade-up"
                                 data-aos-delay="500"
                             >

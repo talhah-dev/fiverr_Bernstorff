@@ -7,6 +7,53 @@ import { Lightbulb, BarChart3, Users } from "lucide-react";
 import { Users2, BadgeCheck, MapPin, ArrowRight } from "lucide-react";
 import { LineChart, ShieldCheck, SunMedium } from "lucide-react";
 import CallToAction from '@/components/CallToAction';
+import {
+    PhoneCall,
+    ScanText,
+    Target,
+    Building2,
+    FileSignature,
+    Repeat,
+} from "lucide-react";
+
+const processSteps = [
+    {
+        title: "Erstgespräch & Zielklärung",
+        meta: "Schritt 01",
+        desc: "Wir verstehen Ihre Ausgangslage, Ziele und den Zeitplan – und klären, ob und wie wir sinnvoll unterstützen können.",
+        icon: PhoneCall,
+    },
+    {
+        title: "Finanzanalyse & Status-Check",
+        meta: "Schritt 02",
+        desc: "Einkommen, Steuern, Liquidität, Finanzierungsspielraum, Risiko- und Renditeprofil – alles sauber strukturiert.",
+        icon: ScanText,
+    },
+    {
+        title: "Strategie & Fahrplan",
+        meta: "Schritt 03",
+        desc: "Sie erhalten ein klares Konzept mit Szenarien (Cashflow, Tilgung, Vermögensentwicklung) und konkreten nächsten Schritten.",
+        icon: Target,
+    },
+    {
+        title: "Projekt-/Objektauswahl",
+        meta: "Schritt 04",
+        desc: "Auswahl passender Immobilien- und/oder PV-Projekte – abgestimmt auf Ihre Strategie, Finanzierung und Steuersituation.",
+        icon: Building2,
+    },
+    {
+        title: "Umsetzung & Koordination",
+        meta: "Schritt 05",
+        desc: "Wir begleiten die Umsetzung gemeinsam mit Finanzierung, Steuer- und Rechtspartnern – strukturiert und transparent.",
+        icon: FileSignature,
+    },
+    {
+        title: "Langfristige Begleitung",
+        meta: "Schritt 06",
+        desc: "Regelmäßige Updates, Optimierung bei Lebensveränderungen und Anpassung der Strategie – damit Ihr Plan langfristig passt.",
+        icon: Repeat,
+    },
+];
 
 const team = [
     {
@@ -95,6 +142,151 @@ export default function About() {
                     </div>
                 </div>
             </section>
+
+            <section className="bg-white py-20 md:py-32" data-aos="fade-up">
+                <div className="mx-auto max-w-6xl px-6">
+                    {/* Header */}
+                    <div className="mx-auto max-w-3xl text-center space-y-4">
+                        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#3d6252]" data-aos="fade-up">
+                            Unser Prozess
+                        </p>
+
+                        <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-slate-900" data-aos="fade-up">
+                            In klaren Schritten zum passenden Investment
+                        </h2>
+
+                        <p className="text-sm md:text-base leading-relaxed text-slate-600" data-aos="fade-up">
+                            Keine Zufallsentscheidungen: Wir arbeiten mit einem strukturierten Ablauf – von der Analyse bis zur Umsetzung
+                            und langfristigen Begleitung.
+                        </p>
+                    </div>
+
+                    {/* Timeline */}
+                    <div className="relative mt-16">
+                        {/* Center line (mobile left, desktop center) */}
+                        <div className="absolute left-4 top-0 h-full w-px bg-slate-200 md:left-1/2 md:-translate-x-1/2" />
+
+                        <div className="space-y-10 md:space-y-0">
+                            {processSteps.map((step, index) => {
+                                const Icon = step.icon;
+                                const isLeft = index % 2 === 0;
+
+                                return (
+                                    <div
+                                        key={step.meta}
+                                        className="relative md:grid md:grid-cols-2 md:gap-12"
+                                        data-aos="fade-up"
+                                        data-aos-delay={index * 120}
+                                    >
+                                        {/* Marker */}
+                                        <div className="absolute left-4 top-6 -translate-x-1/2 md:left-1/2 md:-translate-x-1/2">
+                                            <div className="h-11 w-11 rounded-full bg-[#e7f3ec] border border-[#3d6252]/20 shadow-sm flex items-center justify-center">
+                                                <Icon className="h-5 w-5 text-[#3d6252]" />
+                                            </div>
+                                        </div>
+
+                                        {/* Left column spacer / content */}
+                                        <div className={`${isLeft ? "md:pr-10" : "md:col-start-1 md:pr-10 md:opacity-0 md:pointer-events-none"}`}>
+                                            {isLeft ? (
+                                                <div className="ml-14 md:ml-0">
+                                                    <div className="rounded-3xl border border-slate-200 bg-slate-50 p-8 shadow-sm">
+                                                        <div className="flex items-center justify-between gap-4">
+                                                            <span className="text-xs font-semibold uppercase tracking-[0.18em] text-[#3d6252]">
+                                                                {step.meta}
+                                                            </span>
+                                                            <span className="text-xs text-slate-400">{String(index + 1).padStart(2, "0")}</span>
+                                                        </div>
+
+                                                        <h3 className="mt-3 text-lg font-semibold text-slate-900">
+                                                            {step.title}
+                                                        </h3>
+
+                                                        <p className="mt-3 text-sm leading-relaxed text-slate-600">
+                                                            {step.desc}
+                                                        </p>
+
+                                                        <div className="mt-6 h-px w-full bg-slate-200" />
+
+                                                        <div className="mt-5 flex flex-wrap items-center gap-2">
+                                                            <span className="rounded-full bg-white px-3 py-1 text-xs font-medium text-slate-600 border border-slate-200">
+                                                                Transparenz
+                                                            </span>
+                                                            <span className="rounded-full bg-white px-3 py-1 text-xs font-medium text-slate-600 border border-slate-200">
+                                                                Struktur
+                                                            </span>
+                                                            <span className="rounded-full bg-white px-3 py-1 text-xs font-medium text-slate-600 border border-slate-200">
+                                                                Umsetzungssicherheit
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            ) : null}
+                                        </div>
+
+                                        {/* Right column content */}
+                                        <div className={`${!isLeft ? "md:pl-10" : "md:col-start-2 md:pl-10 md:opacity-0 md:pointer-events-none"}`}>
+                                            {!isLeft ? (
+                                                <div className="ml-14 md:ml-0">
+                                                    <div className="rounded-3xl border border-slate-200 bg-slate-50 p-8 shadow-sm">
+                                                        <div className="flex items-center justify-between gap-4">
+                                                            <span className="text-xs font-semibold uppercase tracking-[0.18em] text-[#3d6252]">
+                                                                {step.meta}
+                                                            </span>
+                                                            <span className="text-xs text-slate-400">{String(index + 1).padStart(2, "0")}</span>
+                                                        </div>
+
+                                                        <h3 className="mt-3 text-lg font-semibold text-slate-900">
+                                                            {step.title}
+                                                        </h3>
+
+                                                        <p className="mt-3 text-sm leading-relaxed text-slate-600">
+                                                            {step.desc}
+                                                        </p>
+
+                                                        <div className="mt-6 h-px w-full bg-slate-200" />
+
+                                                        <div className="mt-5 flex flex-wrap items-center gap-2">
+                                                            <span className="rounded-full bg-white px-3 py-1 text-xs font-medium text-slate-600 border border-slate-200">
+                                                                Präzision
+                                                            </span>
+                                                            <span className="rounded-full bg-white px-3 py-1 text-xs font-medium text-slate-600 border border-slate-200">
+                                                                Partnernetzwerk
+                                                            </span>
+                                                            <span className="rounded-full bg-white px-3 py-1 text-xs font-medium text-slate-600 border border-slate-200">
+                                                                Langfristig
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            ) : null}
+                                        </div>
+                                    </div>
+                                );
+                            })}
+                        </div>
+
+                        {/* Bottom CTA */}
+                        <div className="mt-14 rounded-3xl bg-[#e7f3ec] border border-slate-200 p-8 text-center" data-aos="fade-up">
+                            <p className="text-sm md:text-base font-semibold text-[#2f4a3d]">
+                                Starten wir mit Klarheit statt Bauchgefühl.{" "}
+                                <span className="text-[#3d6252]">Kostenfreies Erstgespräch</span> – strukturiert, transparent, persönlich.
+                            </p>
+
+                            <div className="mt-6 flex justify-center">
+                                <Button
+                                    asChild
+                                    className="rounded-full bg-[#3d6252] px-7 py-6 text-sm font-semibold text-white shadow-[0_18px_40px_rgba(0,0,0,0.15)] hover:bg-[#2f4f42]"
+                                >
+                                    <Link href="/kontakt#beratung">
+                                        Erstgespräch anfragen <ArrowRight className="ml-2 h-4 w-4" />
+                                    </Link>
+                                </Button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
 
             <section
                 className="bg-white py-16 md:py-24"
